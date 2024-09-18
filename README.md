@@ -8,4 +8,6 @@ A simple and interesting online excel viewer using Node.js
 
 2. Run ```npm install``` to install necessary packages
 
+3. Add `uploads` folder inside the repository to put uploaded files
+
 3. Have fun and try uploading excels!!!
