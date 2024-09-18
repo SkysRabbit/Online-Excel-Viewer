@@ -1,0 +1,84 @@
+body {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  background-image: linear-gradient(to right,#ccccff, #a366ff);
+  padding: 20px;
+  margin: 0;
+}
+
+h1, h2 {
+  color: #333;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 20px;
+  margin-top: 20px;
+}
+
+table, th, td {
+  border: 1px solid #ccc;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background-color: #f5f5f5;
+}
+
+tr:hover {
+  background-color: #007bff;
+  font-size: 18px;
+}
+
+.sheet {
+  margin-bottom: 20px;
+}
+
+.tab {
+  max-width: 100%;
+  overflow: scroll;
+  max-height: 100vh;
+}
+
+select {
+  margin-bottom: 20px;
+  padding: 5px;
+  border-radius: 8px;
+  border: none;
+}
+
+button {
+  border: none;
+  background-color: #ccccff;
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: medium;
+}
+
+button:hover {
+  border: solid #333;
+  border-radius: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #007bff;
+  font-size: 15px;
+}
+
+@keyframes linkMagic {
+  0% {font-size: 15px;}
+  50% {font-size: 25px;}
+  100% {font-size: 15px;}
+}
+
+a:hover {
+  text-decoration: underline;
+  animation-name: linkMagic;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}

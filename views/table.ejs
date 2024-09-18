@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Excel Data</title>
+  <link href="/styles/app.css" rel="stylesheet">
+  <script>
+    function showSheet(sheetName) {
+      var sheets = document.querySelectorAll('.sheet');
+      sheets.forEach(function(sheet) {
+        sheet.style.display = 'none';
+      });
+
+      document.getElementById(sheetName).style.display = 'block';
+    }
+  </script>
+</head>
+<body>
+  <h1>Excel Worksheet data Viewer</h1>
+
+  <label for="sheetSelect">Select worksheet:</label>
+  <select id="sheetSelect" onchange="showSheet(this.value)">
+    <% Object.keys(sheetsData).forEach(function(sheetName) { %>
+      <option value="<%= sheetName %>"><%= sheetName %></option>
+    <% }) %>
+  </select>
+
+  <% Object.keys(sheetsData).forEach(function(sheetName) { %>
+    <div class="sheet" id="<%= sheetName %>" style="display: none;">
+      <h2>Worksheet: <%= sheetName %></h2>
+      <div class="tab">
+        <table>
+          <% sheetsData[sheetName].forEach(function(row) { %>
+            <tr>
+              <% row.forEach(function(cell) { %>
+                <td><%= cell !== undefined ? cell : '' %></td>
+              <% }) %>
+            </tr>
+          <% }) %>
+        </table>
+      </div>
+    </div>
+  <% }) %>
+
+  <a href="/">Back and upload</a>
+
+  <script>
+    document.getElementById('<%= Object.keys(sheetsData)[0] %>').style.display = 'block';
+  </script>
+</body>
+</html>
